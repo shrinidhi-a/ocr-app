@@ -1,0 +1,21 @@
+# Environments
+.env
+.venv
+env/
+venv/
+rapidocrenv/
+ENV/
+env.bak/
+venv.bak/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+.pytest_cache/
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+uploads/
+generated_imgs/
