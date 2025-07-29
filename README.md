@@ -1,23 +1,65 @@
-# Flask Template
+# OCR App
 
-This sample repo contains the recommended structure for a Python Flask project. In this sample, we use `flask` to build a web application and the `pytest` to run tests.
+A modern Optical Character Recognition (OCR) application built with a focus on accuracy, speed, and ease of use.
 
- For a more in-depth tutorial, see our [Flask tutorial](https://code.visualstudio.com/docs/python/tutorial-flask).
+## Features
 
- The code in this repo aims to follow Python style guidelines as outlined in [PEP 8](https://peps.python.org/pep-0008/).
+- Extracts text from images and PDFs
+- Supports multiple languages
+- Batch processing of files
+- User-friendly interface
+- Export results to various formats (TXT, CSV, PDF)
+- Configurable OCR settings
 
-## Running the Sample
+## Installation
 
-To successfully run this example, we recommend the following VS Code extensions:
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/shrinidhi-a/ocr-app.git
+    cd ocr-app
+    ```
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
+    or
+    ```bash
+    pip install -r requirements.txt
+    ```
+    *(Choose the command based on your tech stack)*
 
-- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-- [Python Debugger](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy)
-- [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) 
+## Usage
 
-- Open the template folder in VS Code (**File** > **Open Folder...**)
-- Create a Python virtual environment using the **Python: Create Environment** command found in the Command Palette (**View > Command Palette**). Ensure you install dependencies found in the `pyproject.toml` file
-- Ensure your newly created environment is selected using the **Python: Select Interpreter** command found in the Command Palette
-- Run the app using the Run and Debug view or by pressing `F5`
-- To test your app, ensure you have the dependencies from `dev-requirements.txt` installed in your environment
-- Navigate to the Test Panel to configure your Python test or by triggering the **Python: Configure Tests** command from the Command Palette
-- Run tests in the Test Panel or by clicking the Play Button next to the individual tests in the `test_app.py` file
+1. Start the application:
+    ```bash
+    npm start
+    ```
+    or
+    ```bash
+    python main.py
+    ```
+2. Upload images or PDFs.
+3. Click "Extract Text" to process files.
+4. Review and export the results.
+
+## Configuration
+
+- Edit `config.json` to adjust OCR settings (e.g., language, output format).
+- For advanced options, refer to the documentation in the `docs/` folder.
+
+## Contributing
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/your-feature`)
+3. Commit your changes
+4. Open a pull request
+
+## License
+
+This project is licensed under the MIT License.
+
+## Acknowledgements
+
+- [Tesseract OCR](https://github.com/tesseract-ocr/tesseract)
+- [OpenCV](https://opencv.org/)
+- Community contributors
