@@ -1,9 +1,9 @@
 from flask import Flask, request, render_template, send_from_directory, url_for
 import os
-from rapidocr import RapidOCR
+from ocr_engine import OCREngine
 
 app = Flask(__name__)
-engine = RapidOCR()
+ocr_engine = OCREngine()
 
 # Ensure upload and generated_imgs directories exist
 os.makedirs('uploads', exist_ok=True)
@@ -24,8 +24,7 @@ def upload():
         img_path = os.path.join('uploads', file.filename)
         gen_img_path = os.path.join('generated_imgs', file.filename)
         file.save(img_path)
-        result = engine(img_path, return_word_box=True, return_single_char_box=True)
-        result.vis(gen_img_path)
+        ocr_engine.process_image(img_path, gen_img_path)
         gen_img_url = url_for('generated_img', filename=file.filename)
         orig_img_url = url_for('uploaded_img', filename=file.filename)
         return render_template('home.html', gen_img_url=gen_img_url, orig_img_url=orig_img_url)
@@ -39,8 +38,8 @@ def uploaded_img(filename):
 def generated_img(filename):
     return send_from_directory('generated_imgs', filename)
 
-# ...existing code...
 if __name__ == '__main__':
-    import os
     port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run(host='0.0.0.0', port=port, debug=True)
+    print(f"Server running on port {port}")
+    print("Visit http://localhost:5000 to access the application")
